@@ -122,11 +122,11 @@
 - Use `Bearer Token` at Authorization when access this endpoint
 - Request Body, pattern example :
 ```
-    {
-        "id": "82b07a6f-60cc-4403-8fd2-329ef0de0d3d",
-        "name": "Folder-D", 
-        "timestamp": 16576232323
-    }
+{
+    "id": "82b07a6f-60cc-4403-8fd2-329ef0de0d3d",
+    "name": "Folder-D", 
+    "timestamp": 16576232323
+}
 ```
 - Respon Body :
 ```
@@ -161,7 +161,6 @@
 {
     "error": false,
     "message": "Success delete folder"
-}
 }
 ```
 
@@ -210,27 +209,27 @@
 - Request Body, pattern example : 
 ```
 {
-        "id" : "82b07a6f-60cc-4403-8fd2-329ef0de045s",
-        "name" : "Document in Folder-C",
-        "type" : "document",
-        "folder_id" : "ipaykfia-zs93-pikt-8iji-41l6q998uj5o",
-        "content" : {
-            "blocks" : [
-                {
-                    "type" : "paragraph",
-                    "text" : "This is paragraph Folder-C 1"
-                },
-                {
-                    "type" : "paragraph",
-                    "text" : "This is paragraph Folder-C 2"
-                }
-                ]
-        }, 
-        "timestamp" : 1605081795,
-        "owner_id" : 130, 
-        "share" : [1,23,4232,121], 
-        "company_id" : 130
-    }
+    "id" : "82b07a6f-60cc-4403-8fd2-329ef0de045s",
+    "name" : "Document in Folder-C",
+    "type" : "document",
+    "folder_id" : "ipaykfia-zs93-pikt-8iji-41l6q998uj5o",
+    "content" : {
+        "blocks" : [
+            {
+                "type" : "paragraph",
+                "text" : "This is paragraph Folder-C 1"
+            },
+            {
+                "type" : "paragraph",
+                "text" : "This is paragraph Folder-C 2"
+            }
+            ]
+    }, 
+    "timestamp" : 1605081795,
+    "owner_id" : 130, 
+    "share" : [1,23,4232,121], 
+    "company_id" : 130
+}
 ```
 - Respon body :
 ```
@@ -312,7 +311,9 @@
 }
 ```
 - Response Body:
+```
 {
     "error": false,
     "message": "Success delete document"
 }
+```
