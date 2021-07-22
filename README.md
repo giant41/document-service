@@ -12,7 +12,7 @@
 ## User Authentication
 ### Create new User
 
-- Endpoint : http://document-service.test/api/auth/document-service/register
+- Endpoint : http://document-service.test/api/auth/register
 - Request Method : POST
 - Request body, pattern example : 
 ```
@@ -41,7 +41,7 @@
 
 
 ### Login User
-- Endpoint : http://document-service.test/api/auth/document-service/login
+- Endpoint : http://document-service.test/api/auth/login
 - Request Method : POST
 - Request body, pattern example : 
 ```
@@ -74,7 +74,7 @@
 ## Manage Folder
 
 ### Show all folder and document
-- Endpoint : http://document-service.test/api/auth/document-service
+- Endpoint : http://document-service.test/api/document-service
 - Request Method : GET
 - Use `Bearer Token` at Authorization when access this endpoint
 - Respon Body :
@@ -118,7 +118,7 @@
 
 
 ### Set/Create New Folder
-- Endpoint : http://document-service.test/api/auth/document-service/folder
+- Endpoint : http://document-service.test/api/document-service/folder
 - Request Method : POST 
 - Use `Bearer Token` at Authorization when access this endpoint
 - Request Body, pattern example :
@@ -148,7 +148,7 @@
 
 
 ### Delete Folder
-- Endpoint : http://document-service.test/api/auth/document-service/folder
+- Endpoint : http://document-service.test/api/document-service/folder
 - Request Method : DELETE
 - Use `Bearer Token` at Authorization when access this endpoint
 - Request Body, pattern example : use folder_id as body request
@@ -169,7 +169,7 @@
 ## Manage Document
 
 ### List File/Document Per Folder
-- Endpoint : http://document-service.test/api/auth/document-service/folder/:folder_id  -> user folder_id as a key
+- Endpoint : http://document-service.test/api/document-service/folder/:folder_id  -> user folder_id as a key
 - Request Method : GET 
 - Use `Bearer Token` at Authorization when access this endpoint
 - Respon Body :
@@ -204,7 +204,7 @@
 
 
 ### Set (Create/Update) document
-- Endpoint : http://document-service.test/api/auth/document-service/document
+- Endpoint : http://document-service.test/api/document-service/document
 - Request Method : POST 
 - Use `Bearer Token` at Authorization when access this endpoint
 - Request Body, pattern example : 
@@ -268,7 +268,7 @@
 
 
 ### Get Detail Document
-- Endpoint : http://document-service.test/api/auth/document-service/document/82b07a6f-60cc-4403-8fd2-329ef0de045s  -> :document_id
+- Endpoint : http://document-service.test/api/document-service/document/82b07a6f-60cc-4403-8fd2-329ef0de045s  -> :document_id
 - Request Method : GET
 - Use `Bearer Token` at Authorization when access this endpoint
 - Respon Body :
@@ -302,7 +302,7 @@
 
 
 ### Delete Document
-- Endpoint : http://document-service.test/api/auth/document-service/document
+- Endpoint : http://document-service.test/api/document-service/document
 - Request Method : DELETE
 - Use `Bearer Token` at Authorization when access this endpoint
 - Request Body, pattern example:  user :document-id as body request

@@ -17,10 +17,6 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::group([
     'middleware' => 'api',
     'namespace' => 'App\Http\Controllers',
@@ -30,27 +26,16 @@ Route::group([
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/logout', [AuthController::class, 'logout']);
     // Route::post('/refresh', [AuthController::class, 'refresh']);
-
-    
-    Route::get('/document-service', [FolderController::class, 'index']);
-    Route::post('/document-service/folder', [FolderController::class, 'store']);
-    Route::get('/document-service/folder/{id}', [FolderController::class, 'show']);
-    Route::delete('/document-service/folder', [FolderController::class, 'destroy']);
-
-    Route::get('/document-service/document/{id}', [DocumentContentController::class, 'show']);
-    Route::post('/document-service/document', [DocumentContentController::class, 'store']);
-    Route::put('/document-service/document', [DocumentContentController::class, 'update']);
-    Route::delete('/document-service/document', [DocumentContentController::class, 'destroy']);
 });
 
-// Route::get('/document-service', [FolderController::class, 'index']);
-// Route::post('/document-service/folder', [FolderController::class, 'store']);
-// Route::get('/document-service/folder/{id}', [FolderController::class, 'show']);
-// Route::delete('/document-service/folder', [FolderController::class, 'destroy']);
+Route::get('/document-service', [FolderController::class, 'index']);
+Route::post('/document-service/folder', [FolderController::class, 'store']);
+Route::get('/document-service/folder/{id}', [FolderController::class, 'show']);
+Route::delete('/document-service/folder', [FolderController::class, 'destroy']);
 
-// Route::get('/document-service/document/{id}', [DocumentContentController::class, 'show']);
-// Route::post('/document-service/document', [DocumentContentController::class, 'store']);
-// Route::put('/document-service/document', [DocumentContentController::class, 'update']);
-// Route::delete('/document-service/document', [DocumentContentController::class, 'destroy']);
+Route::get('/document-service/document/{id}', [DocumentContentController::class, 'show']);
+Route::post('/document-service/document', [DocumentContentController::class, 'store']);
+Route::put('/document-service/document', [DocumentContentController::class, 'update']);
+Route::delete('/document-service/document', [DocumentContentController::class, 'destroy']);
 
 
