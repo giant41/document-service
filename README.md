@@ -17,12 +17,12 @@ document_service
 - Endpoint : http://document-service.test/api/auth/document-service/regiter
 - Request Method : POST
 - Request body : 
-`{
+```{
     "name" : "john Due",
     "email" : "john.due@gmail.com",
     "password" : "123456",
     "password_confirmation" : "123456"
-}`
+}```
 
 - Respon Body : 
 `{
