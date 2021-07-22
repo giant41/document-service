@@ -15,8 +15,8 @@ document_service
 ## User Authentication
 ### Create new User
 
-End Point : POST -> http://document-service.test/api/auth/document-service/regiter
-Request body : 
+- End Point : POST -> http://document-service.test/api/auth/document-service/regiter
+- Request body : 
 `{
     "name" : "john Due",
     "email" : "john.due@gmail.com",
@@ -24,7 +24,7 @@ Request body :
     "password_confirmation" : "123456"
 }`
 
-Respon Body : 
+- Respon Body : 
 `{
     "message": "data aset created",
     "data": {
@@ -37,15 +37,16 @@ Respon Body :
     "token": "qwetuyrtyuiopasdfghjklzxcvbnm1234567890"
 }`
 
+
 ### Login User
-End Point : POST -> http://document-service.test/api/auth/document-service/login
-Request body : 
+- End Point : POST -> http://document-service.test/api/auth/document-service/login
+- Request body : 
 `{
     "email" : "john.due@gmail.com",
     "password" : "123456"
 }`
 
-Respon Body : 
+- Respon Body :
 `{
     "access_token": "qweqwertyuiopasdfghjklzxcvbnm1234567890",
     "token_type": "bearer",
@@ -53,8 +54,8 @@ Respon Body :
 }`
 
 ### Logout User
-End Point : POST -> http://document-service.test/api/auth/logout
-Respon Body :
+- End Point : POST -> http://document-service.test/api/auth/logout
+- Respon Body :
 `{
     "message": "Successfully logged out"
 }`
