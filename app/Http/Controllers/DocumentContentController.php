@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\DB;
 
 class DocumentContentController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -127,9 +133,9 @@ class DocumentContentController extends Controller
     //             ]
     //     }, 
     //     "timestamp" : 1605081795,
-    //     "owner_id" : 123, 
+    //     "owner_id" : 130, 
     //     "share" : [1,23,4232,121], 
-    //     "company_id" : 23
+    //     "company_id" : 130
     // }
 
     // Response
@@ -153,7 +159,7 @@ class DocumentContentController extends Controller
     //                 }
     //             ],
     //             "timestamp": 1605081795,
-    //             "owner_id": 123,
+    //             "owner_id": 130,
     //             "company_id": [
     //                 1,
     //                 23,
@@ -328,9 +334,9 @@ class DocumentContentController extends Controller
     //             ]
     //     }, 
     //     "timestamp" : 1605081795,
-    //     "owner_id" : 123, 
+    //     "owner_id" : 130, 
     //     "share" : [1,23,4232,121], 
-    //     "company_id" : 23
+    //     "company_id" : 120
     // }
 
     // Response
@@ -354,7 +360,7 @@ class DocumentContentController extends Controller
     //                 }
     //             ],
     //             "timestamp": 1605081795,
-    //             "owner_id": 123,
+    //             "owner_id": 130,
     //             "company_id": [
     //                 1,
     //                 23,

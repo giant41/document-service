@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\File;
 
 class FolderController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -53,7 +59,7 @@ class FolderController extends Controller
     //             "owner_id": 1,
     //             "share": "",
     //             "timestamp": 16576232323,
-    //             "company_id": 23
+    //             "company_id": 130
     //         },
     //         {
     //             "id": "82b07a6f-60cc-4403-8fd2-329ef0de0d3b",
@@ -63,7 +69,7 @@ class FolderController extends Controller
     //             "owner_id": 1,
     //             "share": "",
     //             "timestamp": 16576232323,
-    //             "company_id": 23
+    //             "company_id": 130
     //         },
     //     ]
     // }
@@ -98,7 +104,7 @@ class FolderController extends Controller
                 'is_public' => true,
                 'owner_id' => 1,
                 'share' => "",
-                'company_id' => 23,
+                'company_id' => 130,
                 'timestamp' => $request['timestamp'],
                 'created_at' => date('Y-m-d H:i:s')
             ]);
@@ -118,8 +124,8 @@ class FolderController extends Controller
                         'type' => "folder",
                         'content' => [],
                         'timestamp' => $request['timestamp'],
-                        'owner_id' => 123,
-                        'company_id' => 23
+                        'owner_id' => 120,
+                        'company_id' => 130
                     ]
                 ];
 
@@ -159,8 +165,8 @@ class FolderController extends Controller
         //         "type": "folder",
         //         "content": [],
         //         "timestamp": 16576232323,
-        //         "owner_id": 123,
-        //         "company_id": 23
+        //         "owner_id": 120,
+        //         "company_id": 130
         //     }
         // }
     }
@@ -273,7 +279,7 @@ class FolderController extends Controller
     //
     // Request Body:
     // {
-    //         "id": "82b07a6f-60cc-4403-8fd2-329ef0de0d3d" // :folder_id yang dihapus
+    //         "id": "82b07a6f-60cc-4403-8fd2-329ef0de0d3d" // :folder_id as remove key
     // }
     //
     // Response Body:
