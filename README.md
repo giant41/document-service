@@ -27,7 +27,8 @@ document_service
 ```
 
 - Respon Body : 
-`{
+```
+{
     "message": "data aset created",
     "data": {
         "name": "john Due",
@@ -37,7 +38,8 @@ document_service
         "id": 1
     },
     "token": "qwetuyrtyuiopasdfghjklzxcvbnm1234567890"
-}`
+}
+```
 
 
 ### Login User
@@ -48,24 +50,26 @@ document_service
 {
     "email" : "john.due@gmail.com",
     "password" : "123456"
-
 }
 ```
-
 - Respon Body :
-`{
+```
+{
     "access_token": "qweqwertyuiopasdfghjklzxcvbnm1234567890",
     "token_type": "bearer",
     "expires_in": 3600
-}`
+}
+```
 
 ### Logout User
 - Endpoint : http://document-service.test/api/auth/logout
 - Request Method : POST
 - Respon Body :
-`{
+```
+{
     "message": "Successfully logged out"
-}`
+}
+```
 - Don't forget to use `Bearer Token` at Authorization when access this endpoint
 
 
@@ -75,7 +79,8 @@ document_service
 - Endpoint : http://document-service.test/api/auth/document-service
 - Request Method : GET
 - Respon Body :
-<p>{
+```
+{
     "error": false,
     "data": [
         {
@@ -109,8 +114,8 @@ document_service
             "company_id": 23
         }
     ]
-}</p>
-
+}
+```
 - Don't forget to use `Bearer Token` at Authorization when access this endpoint
 
 
@@ -118,15 +123,16 @@ document_service
 - Endpoint : http://document-service.test/api/auth/document-service/folder
 - Request Method : POST 
 - Request Body :
-    <p>
+```
     {
         "id": "82b07a6f-60cc-4403-8fd2-329ef0de0d3d",
         "name": "Folder-D", 
         "timestamp": 16576232323
     }
-    </p>
+```
 - Respon Body :
-<p>{
+```
+{
     "error": false,
     "message": "folder created",
     "data": {
@@ -138,8 +144,8 @@ document_service
         "owner_id": 120,
         "company_id": 130
     }
-}</p> 
-
+}
+``` 
 - Don't forget to use `Bearer Token` at Authorization when access this endpoint
 
 
@@ -147,19 +153,19 @@ document_service
 - Endpoint : http://document-service.test/api/auth/document-service/folder
 - Request Method : DELETE
 - Request Body : use folder_id as body request
-    <p>
+```
     {
         "id": "s2d80llw-7jta-01by-ca9v-exli0f1774vz"
     }
-    </p>
+```
 - Respon Body :
-<p>
+```
 {
     "error": false,
     "message": "Success delete folder"
 }
-}</p> 
-
+}
+```
 - Don't forget to use `Bearer Token` at Authorization when access this endpoint
 
 
@@ -169,7 +175,7 @@ document_service
 - Endpoint : http://document-service.test/api/auth/document-service/folder/:folder_id  -> user folder_id as a key
 - Request Method : GET 
 - Respon Body :
-<p>
+```
 {
     "error": false,
     "data": [
@@ -196,15 +202,14 @@ document_service
         }
     ]
 }
-</p> 
-
+```
 - Don't forget to use `Bearer Token` at Authorization when access this endpoint
 
 ### Set (Create/Update) document
 - Endpoint : http://document-service.test/api/auth/document-service/document
 - Request Method : POST 
 - Request Body : 
-<p>
+```
 {
         "id" : "82b07a6f-60cc-4403-8fd2-329ef0de045s",
         "name" : "Document in Folder-C",
@@ -227,10 +232,9 @@ document_service
         "share" : [1,23,4232,121], 
         "company_id" : 130
     }
-</p>
-
-- Respon ody :
-<p>
+```
+- Respon body :
+```
 {
     "error": false,
     "message": "Success set document",
@@ -261,15 +265,14 @@ document_service
         }
     }
 }
-</p>
-
+```
 - Don't forget to use `Bearer Token` at Authorization when access this endpoint
 
 ### Get Detail Document
 - Endpoint : http://document-service.test/api/auth/document-service/document/82b07a6f-60cc-4403-8fd2-329ef0de045s  -> :document_id
 - Request Method : GET
 - Respon ody :
-<p>
+```
 {
     "error": false,
     "message": "Success get document",
@@ -295,8 +298,7 @@ document_service
         "share": "[1,23,4232,121]"
     }
 }
-</p>
-
+```
 - Don't forget to use `Bearer Token` at Authorization when access this endpoint
 
 
@@ -304,16 +306,14 @@ document_service
 - Endpoint : http://document-service.test/api/auth/document-service/document
 - Request Method : DELETE
 - Request Body:  user :document-id as body request
-<p>
+```
 {
     "id": "82b07a6f-60cc-4403-8fd2-329ef0de045s"
 }
-</p>
-
+```
 - Response Body:
 {
     "error": false,
     "message": "Success delete document"
 }
-
 - Don't forget to use `Bearer Token` at Authorization when access this endpoint
