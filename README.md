@@ -13,7 +13,7 @@
 
 - Endpoint : http://document-service.test/api/auth/document-service/register
 - Request Method : POST
-- Request body : 
+- Request body, pattern example : 
 ```
 {
     "name" : "john Due",
@@ -42,7 +42,7 @@
 ### Login User
 - Endpoint : http://document-service.test/api/auth/document-service/login
 - Request Method : POST
-- Request body : 
+- Request body, pattern example : 
 ```
 {
     "email" : "john.due@gmail.com",
@@ -120,7 +120,7 @@
 - Endpoint : http://document-service.test/api/auth/document-service/folder
 - Request Method : POST 
 - Use `Bearer Token` at Authorization when access this endpoint
-- Request Body :
+- Request Body, pattern example :
 ```
     {
         "id": "82b07a6f-60cc-4403-8fd2-329ef0de0d3d",
@@ -150,7 +150,7 @@
 - Endpoint : http://document-service.test/api/auth/document-service/folder
 - Request Method : DELETE
 - Use `Bearer Token` at Authorization when access this endpoint
-- Request Body : use folder_id as body request
+- Request Body, pattern example : use folder_id as body request
 ```
     {
         "id": "s2d80llw-7jta-01by-ca9v-exli0f1774vz"
@@ -207,7 +207,7 @@
 - Endpoint : http://document-service.test/api/auth/document-service/document
 - Request Method : POST 
 - Use `Bearer Token` at Authorization when access this endpoint
-- Request Body : 
+- Request Body, pattern example : 
 ```
 {
         "id" : "82b07a6f-60cc-4403-8fd2-329ef0de045s",
@@ -271,7 +271,7 @@
 - Endpoint : http://document-service.test/api/auth/document-service/document/82b07a6f-60cc-4403-8fd2-329ef0de045s  -> :document_id
 - Request Method : GET
 - Use `Bearer Token` at Authorization when access this endpoint
-- Respon ody :
+- Respon Body :
 ```
 {
     "error": false,
@@ -305,7 +305,7 @@
 - Endpoint : http://document-service.test/api/auth/document-service/document
 - Request Method : DELETE
 - Use `Bearer Token` at Authorization when access this endpoint
-- Request Body:  user :document-id as body request
+- Request Body, pattern example:  user :document-id as body request
 ```
 {
     "id": "82b07a6f-60cc-4403-8fd2-329ef0de045s"
