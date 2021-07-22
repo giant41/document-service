@@ -6,6 +6,7 @@
 - Run `composer install`
 - create database `document_service`
 - Run `php artisan migrate`
+- Run `php artisan jwt:secret`
 - Run `php artisan serve`
 
 ## User Authentication
