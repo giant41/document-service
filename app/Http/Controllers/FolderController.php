@@ -46,34 +46,6 @@ class FolderController extends Controller
 
         return response()->json($response, Response::HTTP_OK);
     }
-    // end-point : http://document-service.test/api/document-service
-    // Response 
-    // {
-    //     "error": false,
-    //     "data": [
-    //         {
-    //             "id": "82b07a6f-60cc-4403-8fd2-329ef0de0d3c",
-    //             "name": "Folder-C",
-    //             "type": "folder",
-    //             "is_public": 1,
-    //             "owner_id": 1,
-    //             "share": "",
-    //             "timestamp": 16576232323,
-    //             "company_id": 130
-    //         },
-    //         {
-    //             "id": "82b07a6f-60cc-4403-8fd2-329ef0de0d3b",
-    //             "name": "Folder-B",
-    //             "type": "folder",
-    //             "is_public": 1,
-    //             "owner_id": 1,
-    //             "share": "",
-    //             "timestamp": 16576232323,
-    //             "company_id": 130
-    //         },
-    //     ]
-    // }
-
 
 
     /**
@@ -146,29 +118,6 @@ class FolderController extends Controller
             ]);
 
         }
-
-        // End-Point : http://document-service.test/api/document-service/folder
-        // Request body : 
-        // {
-        //     "id": "82b07a6f-60cc-4403-8fd2-329ef0de0d3c",
-        //     "name": "Folder-C", 
-        //     "timestamp": 16576232323
-        // }
-        // 
-        // Response body :
-        // {
-        //     "error": false,
-        //     "message": "folder created",
-        //     "data": {
-        //         "id": "82b07a6f-60cc-4403-8fd2-329ef0de0d3c",
-        //         "name": "Folder-C",
-        //         "type": "folder",
-        //         "content": [],
-        //         "timestamp": 16576232323,
-        //         "owner_id": 120,
-        //         "company_id": 130
-        //     }
-        // }
     }
 
 
@@ -220,7 +169,6 @@ class FolderController extends Controller
 
         return response()->json($response, Response::HTTP_OK);
     }
-    // endpoint : http://document-service.test/api/document-service/folder/n6o4sq52-i4l1-o3f1-0pcl-sapyti1qgi55 // folder_id as a key
 
 
     /**
@@ -275,18 +223,6 @@ class FolderController extends Controller
             ]);
         }
     }
-    // end-point : http://document-service.test/api/document-service/folder
-    //
-    // Request Body:
-    // {
-    //         "id": "82b07a6f-60cc-4403-8fd2-329ef0de0d3d" // :folder_id as remove key
-    // }
-    //
-    // Response Body:
-    // {
-    //     "error": false,
-    //     "message": "Success delete folder"
-    // }
 
 
     /**

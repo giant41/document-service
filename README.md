@@ -1,20 +1,17 @@
 # RESTfull API Document Service with Laravel and JWT    
 
-Quick Start
-## Database Name 
-document_service
-
 ## Install Dependencies
 - clone the project `git clone https://github.com/giant41/document-service.git`
 - cd document-service
 - Run `composer install`
+- create database `document_service`
 - Run `php artisan migrate`
 - Run `php artisan serve`
 
 ## User Authentication
 ### Create new User
 
-- Endpoint : http://document-service.test/api/auth/document-service/regiter
+- Endpoint : http://document-service.test/api/auth/document-service/register
 - Request Method : POST
 - Request body : 
 ```
@@ -64,13 +61,13 @@ document_service
 ### Logout User
 - Endpoint : http://document-service.test/api/auth/logout
 - Request Method : POST
+- Use `Bearer Token` at Authorization when access this endpoint
 - Respon Body :
 ```
 {
     "message": "Successfully logged out"
 }
 ```
-- Don't forget to use `Bearer Token` at Authorization when access this endpoint
 
 
 ## Manage Folder
@@ -78,6 +75,7 @@ document_service
 ### Show all folder and document
 - Endpoint : http://document-service.test/api/auth/document-service
 - Request Method : GET
+- Use `Bearer Token` at Authorization when access this endpoint
 - Respon Body :
 ```
 {
@@ -116,12 +114,12 @@ document_service
     ]
 }
 ```
-- Don't forget to use `Bearer Token` at Authorization when access this endpoint
 
 
 ### Set/Create New Folder
 - Endpoint : http://document-service.test/api/auth/document-service/folder
 - Request Method : POST 
+- Use `Bearer Token` at Authorization when access this endpoint
 - Request Body :
 ```
     {
@@ -146,12 +144,12 @@ document_service
     }
 }
 ``` 
-- Don't forget to use `Bearer Token` at Authorization when access this endpoint
 
 
 ### Delete Folder
 - Endpoint : http://document-service.test/api/auth/document-service/folder
 - Request Method : DELETE
+- Use `Bearer Token` at Authorization when access this endpoint
 - Request Body : use folder_id as body request
 ```
     {
@@ -166,7 +164,6 @@ document_service
 }
 }
 ```
-- Don't forget to use `Bearer Token` at Authorization when access this endpoint
 
 
 ## Manage Document
@@ -174,6 +171,7 @@ document_service
 ### List File/Document Per Folder
 - Endpoint : http://document-service.test/api/auth/document-service/folder/:folder_id  -> user folder_id as a key
 - Request Method : GET 
+- Use `Bearer Token` at Authorization when access this endpoint
 - Respon Body :
 ```
 {
@@ -203,11 +201,12 @@ document_service
     ]
 }
 ```
-- Don't forget to use `Bearer Token` at Authorization when access this endpoint
+
 
 ### Set (Create/Update) document
 - Endpoint : http://document-service.test/api/auth/document-service/document
 - Request Method : POST 
+- Use `Bearer Token` at Authorization when access this endpoint
 - Request Body : 
 ```
 {
@@ -266,11 +265,12 @@ document_service
     }
 }
 ```
-- Don't forget to use `Bearer Token` at Authorization when access this endpoint
+
 
 ### Get Detail Document
 - Endpoint : http://document-service.test/api/auth/document-service/document/82b07a6f-60cc-4403-8fd2-329ef0de045s  -> :document_id
 - Request Method : GET
+- Use `Bearer Token` at Authorization when access this endpoint
 - Respon ody :
 ```
 {
@@ -299,12 +299,12 @@ document_service
     }
 }
 ```
-- Don't forget to use `Bearer Token` at Authorization when access this endpoint
 
 
 ### Delete Document
 - Endpoint : http://document-service.test/api/auth/document-service/document
 - Request Method : DELETE
+- Use `Bearer Token` at Authorization when access this endpoint
 - Request Body:  user :document-id as body request
 ```
 {
@@ -316,4 +316,3 @@ document_service
     "error": false,
     "message": "Success delete document"
 }
-- Don't forget to use `Bearer Token` at Authorization when access this endpoint

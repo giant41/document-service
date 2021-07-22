@@ -113,65 +113,6 @@ class DocumentContentController extends Controller
         }
     }
 
-    // Endpoint : POST ->  http://document-service.test/api/document-service/document
-    // Body Payload
-    // {
-    //     "id" : "82b07a6f-60cc-4403-8fd2-329ef0de045n",
-    //     "name" : "Document Job desc Tech n",
-    //     "type" : "document",
-    //     "folder_id" : "68uc9aux-8u9a-sj87-o031-qjz7rhgzyj3t",
-    //     "content" : {
-    //         "blocks" : [
-    //             {
-    //                 "type" : "paragraph",
-    //                 "text" : "This is paragraph 1"
-    //             },
-    //             {
-    //                 "type" : "paragraph",
-    //                 "text" : "This is paragraph 2"
-    //             }
-    //             ]
-    //     }, 
-    //     "timestamp" : 1605081795,
-    //     "owner_id" : 130, 
-    //     "share" : [1,23,4232,121], 
-    //     "company_id" : 130
-    // }
-
-    // Response
-    // {
-    //     "error": false,
-    //     "message": "Success set document",
-    //     "data": {
-    //         "document": {
-    //             "id": "82b07a6f-60cc-4403-8fd2-329ef0de045n",
-    //             "name": "Document Job desc Tech n",
-    //             "type": "document",
-    //             "folder_id": "68uc9aux-8u9a-sj87-o031-qjz7rhgzyj3t",
-    //             "content": [
-    //                 {
-    //                     "type": "paragraph",
-    //                     "text": "This is paragraph 1"
-    //                 },
-    //                 {
-    //                     "type": "paragraph",
-    //                     "text": "This is paragraph 2"
-    //                 }
-    //             ],
-    //             "timestamp": 1605081795,
-    //             "owner_id": 130,
-    //             "company_id": [
-    //                 1,
-    //                 23,
-    //                 4232,
-    //                 121
-    //             ]
-    //         }
-    //     }
-    // }
-
-
-
 
     /**
      * Display the specified resource.
@@ -218,8 +159,6 @@ class DocumentContentController extends Controller
 
         return response()->json($response, Response::HTTP_OK);
     }
-    // endpoint : http://document-service.test/api//document-service/document/:document_id // folder_id as a key
-
 
 
     /**
@@ -314,63 +253,6 @@ class DocumentContentController extends Controller
 
         }
     }
-    // Endpoint : PUT ->  http://document-service.test/api/document-service/document
-    // Body Payload
-    // {
-    //     "id" : "82b07a6f-60cc-4403-8fd2-329ef0de045n",
-    //     "name" : "Document Job desc Tech n",
-    //     "type" : "document",
-    //     "folder_id" : "68uc9aux-8u9a-sj87-o031-qjz7rhgzyj3t",
-    //     "content" : {
-    //         "blocks" : [
-    //             {
-    //                 "type" : "paragraph",
-    //                 "text" : "This is paragraph 1"
-    //             },
-    //             {
-    //                 "type" : "paragraph",
-    //                 "text" : "This is paragraph 2"
-    //             }
-    //             ]
-    //     }, 
-    //     "timestamp" : 1605081795,
-    //     "owner_id" : 130, 
-    //     "share" : [1,23,4232,121], 
-    //     "company_id" : 120
-    // }
-
-    // Response
-    // {
-    //     "error": false,
-    //     "message": "Success set document",
-    //     "data": {
-    //         "document": {
-    //             "id": "82b07a6f-60cc-4403-8fd2-329ef0de045n",
-    //             "name": "Document Job desc Tech n",
-    //             "type": "document",
-    //             "folder_id": "68uc9aux-8u9a-sj87-o031-qjz7rhgzyj3t",
-    //             "content": [
-    //                 {
-    //                     "type": "paragraph",
-    //                     "text": "This is paragraph 1"
-    //                 },
-    //                 {
-    //                     "type": "paragraph",
-    //                     "text": "This is paragraph 2"
-    //                 }
-    //             ],
-    //             "timestamp": 1605081795,
-    //             "owner_id": 130,
-    //             "company_id": [
-    //                 1,
-    //                 23,
-    //                 4232,
-    //                 121
-    //             ]
-    //         }
-    //     }
-    // }
-
 
 
     /**
@@ -410,18 +292,4 @@ class DocumentContentController extends Controller
             ]);
         }
     }
-
-  // end-point : http://document-service.test/api/document-service/document
-    //
-    // Request Body:
-    // {
-    //         "id": "82b07a6f-60cc-4403-8fd2-329ef0de0d3d" //id document yang dihapus
-    // }
-    //
-    // Response Body:
-    // {
-    //     "error": false,
-    //     "message": "Success delete document"
-    // }
-
 }
