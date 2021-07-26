@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Document;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
 
 class FolderController extends Controller
 {
@@ -15,6 +17,7 @@ class FolderController extends Controller
     public function __construct()
     {
         $this->middleware('auth:api');
+        $this->userID = Auth::user()?Auth::user()->id:null;
     }
     
     /**
@@ -29,14 +32,18 @@ class FolderController extends Controller
         $doc = array();
         $i = 0;
         foreach ($documents as $document){
-            $doc[$i]['id'] = $document->document_id;
-            $doc[$i]['name'] = $document->name;
-            $doc[$i]['type'] = $document->type;
-            $doc[$i]['is_public'] = $document->is_public;
-            $doc[$i]['owner_id'] = $document->owner_id;
-            $doc[$i]['share'] = $document->share;
-            $doc[$i]['timestamp'] = $document->timestamp;
-            $doc[$i]['company_id'] = $document->company_id;
+
+            $user_share = array_map(fn(string $x): int => (int) $x, explode(',', $document->share));
+            if($document->owner_id == $this->userID || $document->is_public == true || in_array($this->userID, $user_share)) {
+                $doc[$i]['id'] = $document->document_id;
+                $doc[$i]['name'] = $document->name;
+                $doc[$i]['type'] = $document->type;
+                $doc[$i]['is_public'] = $document->is_public;   
+                $doc[$i]['owner_id'] = $document->owner_id;
+                $doc[$i]['share'] = $document->share;
+                $doc[$i]['timestamp'] = $document->timestamp;
+                $doc[$i]['company_id'] = $document->company_id;
+            }
             $i++;
         }
         $response = [
@@ -74,8 +81,8 @@ class FolderController extends Controller
                 'type' => "folder",
                 'folder_id' => $folder_id,
                 'is_public' => true,
-                'owner_id' => 1,
-                'share' => "",
+                'owner_id' => $this->userID,
+                'share' => "[]",
                 'company_id' => 130,
                 'timestamp' => $request['timestamp'],
                 'created_at' => date('Y-m-d H:i:s')

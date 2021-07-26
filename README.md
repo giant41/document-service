@@ -1,4 +1,4 @@
-# RESTfull API Document Service with Laravel and JWT    
+# RESTful API Document Service with Laravel and JWT    
 
 ## Install Dependencies
 - clone the project `git clone https://github.com/giant41/document-service.git`
